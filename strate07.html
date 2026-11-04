@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STRATE-07 — Site PHP / MySQL — Mel Nadaud</title>
+  <meta name="description" content="STRATE-07 : boutique fictive en PHP et MySQL, avec comptes clients, commandes et espace administrateur, mise en ligne sur alwaysdata.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/projet.css">
+</head>
+<body>
+
+  <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
+
+  <main class="project-detail">
+    <h1>STRATE-07</h1>
+    <p class="project-meta">Développement web — Projet ESGI — 2026</p>
+    <div class="badges"><span class="badge ligne">En ligne</span></div>
+
+    <div class="actions">
+      <a class="btn" href="https://strate07.alwaysdata.net" target="_blank" rel="noopener">Voir le site en ligne ↗</a>
+    </div>
+
+    <img src="img/strate07-accueil.webp" alt="Page d'accueil du site STRATE-07" class="hero-img" width="1366" height="800">
+    <p class="caption">Page d'accueil. Le bandeau jaune rappelle qu'il s'agit d'un site fictif.</p>
+
+    <div class="facts">
+      <div><b>Type</b>Boutique fictive (armurerie d'un univers de science-fiction)</div>
+      <div><b>Front</b>HTML, CSS, JavaScript</div>
+      <div><b>Back</b>PHP (PDO), réponses en JSON</div>
+      <div><b>Base de données</b>MySQL / MariaDB, 5 tables</div>
+      <div><b>Hébergement</b>alwaysdata (HTTPS)</div>
+    </div>
+
+    <h2>Description</h2>
+    <p>STRATE-07 est une boutique fictive complète : un visiteur peut créer un compte, se connecter, parcourir un catalogue de 53 produits, passer commande et suivre ses commandes. Un espace administrateur permet de voir les clients inscrits et de faire avancer les commandes (en préparation, expédiée, livrée).</p>
+    <p>Les pages sont en HTML/CSS/JavaScript. Le JavaScript interroge des scripts PHP qui lisent et écrivent dans une base MySQL, puis renvoient les données en JSON.</p>
+
+    <h2>Fonctionnalités</h2>
+    <ul>
+      <li><strong>Catalogue :</strong> 53 produits, filtres par catégorie, recherche, tri, fiche détaillée.</li>
+      <li><strong>Comptes clients :</strong> inscription avec vérification des champs, connexion par pseudo ou e-mail, session de 30 jours.</li>
+      <li><strong>Panier et commandes :</strong> le serveur revérifie le prix et le stock avant d'enregistrer la commande, puis met le stock à jour.</li>
+      <li><strong>Profil :</strong> informations du client et suivi de ses commandes.</li>
+      <li><strong>Espace administrateur :</strong> liste des clients, changement de statut des commandes. Un compte client normal est refusé.</li>
+    </ul>
+
+    <h2>Sécurité</h2>
+    <ul>
+      <li>Mots de passe hachés avec <code>password_hash()</code>, jamais stockés en clair.</li>
+      <li>Requêtes préparées partout, contre l'injection SQL.</li>
+      <li>Toutes les vérifications refaites côté serveur : le JavaScript peut être contourné.</li>
+      <li>Pages admin protégées côté serveur, pas seulement masquées dans l'interface.</li>
+      <li>Utilisateur MySQL dédié au site, distinct du compte principal de l'hébergement.</li>
+      <li>Cookie de session <code>HttpOnly</code>, <code>SameSite=Lax</code>, et <code>Secure</code> en HTTPS.</li>
+    </ul>
+
+    <h2>Mise en ligne</h2>
+    <p>Le site a d'abord été développé en local avec WampServer, puis déployé chez l'hébergeur alwaysdata :</p>
+    <ul>
+      <li>Création de la base et d'un utilisateur MySQL dédié depuis le panneau de l'hébergeur.</li>
+      <li>Adaptation des scripts SQL : un hébergeur mutualisé n'autorise pas <code>CREATE DATABASE</code>, les tables sont importées dans la base créée depuis le panneau.</li>
+      <li>Fichiers inutiles en production retirés du serveur : scripts SQL, page de test de connexion, sauvegardes.</li>
+      <li>Transfert des fichiers en FTP chiffré (TLS) avec FileZilla.</li>
+      <li>Tests en conditions réelles : inscription, connexion, commande, baisse du stock, changement de statut par l'admin.</li>
+    </ul>
+
+    <h2>Un problème rencontré</h2>
+    <p>Après la mise en ligne, le catalogue s'affichait correctement… mais ce n'était pas une preuve que la base fonctionnait : le JavaScript contient une copie de secours du catalogue, utilisée si le serveur ne répond pas. J'ai donc testé directement le script <code>php/produits.php</code>, puis une inscription réelle, pour vérifier que les données venaient bien de MySQL.</p>
+
+    <h2>Ma part dans le projet</h2>
+    <div class="encadre">
+      <p><strong>Idée et univers</strong>, choix des fonctionnalités, <strong>mise en place de la base de données</strong> en local puis chez l'hébergeur, <strong>déploiement</strong> (FTP, configuration MySQL) et <strong>tests</strong>.</p>
+      <p>Le code est écrit avec l'assistance d'une IA. Je le relis et je l'applique en cherchant à le comprendre, pour pouvoir le faire évoluer moi-même.</p>
+    </div>
+
+    <h2>Espace administrateur</h2>
+    <p>L'espace admin n'est pas accessible publiquement, car il affiche les adresses e-mail des inscrits. Voici à quoi il ressemble :</p>
+    <div class="galerie">
+      <figure><a href="img/strate07-admin-commandes.webp" target="_blank"><img src="img/strate07-admin-commandes.webp" alt="Page d'administration : suivi des commandes" loading="lazy"></a><figcaption>Suivi des commandes</figcaption></figure>
+      <figure><a href="img/strate07-admin-clients.webp" target="_blank"><img src="img/strate07-admin-clients.webp" alt="Page d'administration : liste des clients (compte de test)" loading="lazy"></a><figcaption>Liste des clients (compte de test)</figcaption></figure>
+    </div>
+
+    <h2>Autres captures</h2>
+    <div class="galerie">
+      <figure><a href="img/strate07-catalogue.webp" target="_blank"><img src="img/strate07-catalogue.webp" alt="Catalogue STRATE-07 avec filtres" loading="lazy"></a><figcaption>Catalogue et filtres</figcaption></figure>
+      <figure><a href="img/strate07-inscription.webp" target="_blank"><img src="img/strate07-inscription.webp" alt="Formulaire d'inscription STRATE-07" loading="lazy"></a><figcaption>Formulaire d'inscription</figcaption></figure>
+    </div>
+
+    <h2>Outils</h2>
+    <div class="tags">
+      <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>PDO</span><span>MySQL</span><span>phpMyAdmin</span><span>WampServer</span><span>alwaysdata</span><span>FTP / TLS</span>
+    </div>
+  </main>
+</body>
+</html>

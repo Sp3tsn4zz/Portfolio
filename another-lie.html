@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>another-lie — Site de l'univers vvh0sn3xt — Mel Nadaud</title>
+  <meta name="description" content="another-lie : site artistique de l'univers vvh0sn3xt, en HTML, CSS et JavaScript, publié avec GitHub Pages.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/projet.css">
+</head>
+<body>
+
+  <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
+
+  <main class="project-detail">
+    <h1>another-lie</h1>
+    <p class="project-meta">Développement web — Projet personnel — 2026</p>
+    <div class="badges"><span class="badge ligne">En ligne</span><span class="badge dev">Contenu en cours d'ajout</span></div>
+
+    <div class="actions">
+      <a class="btn" href="https://sp3tsn4zz.github.io/another-lie/" target="_blank" rel="noopener">Voir le site ↗</a>
+      <a class="btn secondaire" href="https://github.com/Sp3tsn4zz/another-lie" target="_blank" rel="noopener">Code sur GitHub ↗</a>
+    </div>
+
+    <img src="img/anotherlie-demarrage.webp" alt="Écran de démarrage animé du site another-lie" class="hero-img" width="1366" height="800">
+    <p class="caption">L'écran de démarrage : texte tapé lettre par lettre et barre de chargement.</p>
+
+    <div class="encadre">
+      <p><strong>Accès au site :</strong> identifiant <code>newid</code> · code <code>123</code></p>
+      <p>L'écran d'accès fait partie de la mise en scène : la vérification se fait dans le navigateur, ce n'est pas une vraie protection.</p>
+    </div>
+
+    <div class="facts">
+      <div><b>Type</b>Site artistique de mon projet musical vvh0sn3xt</div>
+      <div><b>Technos</b>HTML, CSS, JavaScript, sans framework</div>
+      <div><b>Versionnage</b>Git et GitHub (branche de fonctionnalité, fusion)</div>
+      <div><b>Hébergement</b>GitHub Pages</div>
+    </div>
+
+    <h2>Description</h2>
+    <p>another-lie est le site de l'univers visuel et musical de mon projet vvh0sn3xt (sigilkore / dark trap). Il reprend l'esthétique du projet : terminal en panne, glitchs, rouge sang et polices gothiques. Le but était d'apprendre le HTML, le CSS et le JavaScript en construisant un site qui me ressemble, sans framework.</p>
+
+    <h2>Ce que fait le site</h2>
+    <ul>
+      <li><strong>Écran de démarrage :</strong> lignes de « diagnostic » écrites lettre par lettre, avec une barre de progression qui avance au même rythme.</li>
+      <li><strong>Écran d'accès :</strong> identifiant et code demandés avant d'entrer. L'accès est retenu pendant la session (<code>sessionStorage</code>), et les autres pages renvoient vers l'accueil si on n'est pas passé par cet écran.</li>
+      <li><strong>Effets glitch :</strong> sur le logo, sur le menu au survol et pendant les transitions entre les pages.</li>
+      <li><strong>Galerie filtrable :</strong> les créations sont décrites dans un fichier de données séparé (<code>data/creations.js</code>), ce qui permet d'en ajouter sans toucher au code de la page.</li>
+      <li><strong>Vidéo en fond et logo 3D animé</strong> intégré dans un coin de l'écran.</li>
+      <li><strong>Pages :</strong> musique, galerie, vidéos, 3D, lore, contact.</li>
+    </ul>
+
+    <div class="encadre note">
+      <strong>État actuel :</strong> la structure et les effets sont en place. La galerie et la page 3D sont encore en cours de remplissage.
+    </div>
+
+    <h2>Git et publication</h2>
+    <p>J'ai développé le site sur une branche de fonctionnalité (<code>feature/page-accueil</code>), avec des commits réguliers, puis fusionné cette branche dans <code>main</code>. La branche <code>main</code> est publiée automatiquement par GitHub Pages : chaque <code>git push</code> met le site à jour.</p>
+
+    <h2>Ma part dans le projet</h2>
+    <div class="encadre">
+      <p><strong>Idée, univers visuel et direction artistique</strong>, choix des fonctionnalités, tests, gestion du dépôt Git et mise en ligne.</p>
+      <p>Le code est écrit avec l'assistance d'une IA. Je le relis et je l'applique en cherchant à le comprendre, pour pouvoir le faire évoluer moi-même.</p>
+    </div>
+
+    <h2>Captures</h2>
+    <div class="galerie">
+      <figure><a href="img/anotherlie-acces.webp" target="_blank"><img src="img/anotherlie-acces.webp" alt="Écran d'accès « Enter soul frequency »" loading="lazy"></a><figcaption>Écran d'accès</figcaption></figure>
+      <figure><a href="img/anotherlie-musique.webp" target="_blank"><img src="img/anotherlie-musique.webp" alt="Page musique du site another-lie" loading="lazy"></a><figcaption>Page musique</figcaption></figure>
+    </div>
+
+    <h2>Outils</h2>
+    <div class="tags">
+      <span>HTML</span><span>CSS</span><span>JavaScript</span><span>sessionStorage</span><span>Git</span><span>GitHub</span><span>GitHub Pages</span>
+    </div>
+  </main>
+</body>
+</html>

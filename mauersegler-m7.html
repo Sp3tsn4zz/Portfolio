@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAUERSEGLER M-7 — Modélisation 3D — Mel Nadaud</title>
+  <meta name="description" content="Pistolet fictif MAUERSEGLER M-7 modélisé dans Blender, visible en 3D interactive, et intégré dans un jeu Roblox.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/projet.css">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.1.0/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+  <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
+
+  <main class="project-detail">
+    <h1>MAUERSEGLER M-7</h1>
+    <p class="project-meta">Modélisation 3D — Projet personnel — 2026</p>
+
+    <model-viewer
+      src="models/mauersegler-m7.glb"
+      poster="img/mauersegler-m7-apercu.webp"
+      alt="Modèle 3D du pistolet fictif MAUERSEGLER M-7 avec silencieux et module laser"
+      camera-controls
+      auto-rotate
+      auto-rotate-delay="1500"
+      rotation-per-second="18deg"
+      camera-orbit="30deg 75deg auto"
+      environment-image="neutral"
+      exposure="1.4"
+      shadow-intensity="0.6"
+      interaction-prompt="none">
+    </model-viewer>
+    <p class="aide-3d">Clic gauche + glisser pour tourner · molette pour zoomer · clic droit + glisser pour déplacer</p>
+
+    <div class="facts">
+      <div><b>Objet</b>Pistolet 9 mm fictif, avec silencieux « Dexsuppresor CZ3 » et module laser « PCNR204 »</div>
+      <div><b>Logiciel</b>Blender</div>
+      <div><b>Version détaillée</b>≈ 146 000 triangles</div>
+      <div><b>Version jeu</b>≈ 16 000 triangles, pour Roblox</div>
+    </div>
+
+    <h2>Description</h2>
+    <p>Arme fictive créée pour mon jeu Roblox. Je voulais un modèle crédible dans le détail : glissière usinée, rainures de préhension, organes de visée, gravures, chargeur avec témoins de munitions, silencieux démontable en tronçons et module laser fixé sur le rail.</p>
+
+    <h2>Techniques utilisées</h2>
+    <ul>
+      <li><strong>Modélisation par booléens non destructifs :</strong> les rainures, évents, cannelures et gravures sont « creusés » par des objets de découpe cachés. On peut donc les déplacer ou les modifier à tout moment.</li>
+      <li><strong>Chanfreins et normales pondérées</strong> (modificateurs Bevel et Weighted Normal) pour des arêtes qui accrochent la lumière comme sur une vraie pièce usinée.</li>
+      <li><strong>Matériaux PBR</strong> (Principled BSDF) : acier, alu anodisé, polymère, revêtement Cerakote, avec du bruit procédural pour varier la rugosité. Éléments lumineux cyan pour l'identité visuelle du jeu.</li>
+      <li><strong>Deux versions du modèle :</strong> une version détaillée pour le rendu, et une version allégée d'environ 16 000 triangles pour le moteur de jeu.</li>
+    </ul>
+
+    <h2>Du logiciel 3D au web et au jeu</h2>
+    <ul>
+      <li><strong>Vers Roblox :</strong> export FBX de la version allégée, puis import dans Roblox Studio.</li>
+      <li><strong>Vers le web :</strong> export au format glTF (.glb), puis compression de la géométrie (Draco). Le fichier passe de 6,5 Mo à 0,5 Mo.</li>
+    </ul>
+
+    <h2>Un problème rencontré</h2>
+    <p>Le format glTF ne sait pas traduire les textures procédurales de Blender. À l'export, la rugosité des matériaux métalliques était remplacée par la valeur maximale, et l'arme paraissait mate et plate. Les valeurs de rugosité d'origine ont été remises dans le fichier exporté. Seul le relief très fin (bump) est perdu, ce qui ne se voit pas à cette échelle.</p>
+
+    <h2>Ma part dans le projet</h2>
+    <div class="encadre">
+      <p><strong>Idée, design de l'arme et direction artistique</strong> (nom, accessoires, gravures, couleurs), validation du résultat et intégration dans mon jeu.</p>
+      <p>La modélisation a été réalisée avec l'assistance d'une IA dans Blender. Je suis le processus étape par étape pour apprendre à le refaire moi-même.</p>
+    </div>
+
+    <p><a href="jeu-roblox.html">→ Voir l'arme dans le jeu Roblox</a></p>
+
+    <h2>Outils</h2>
+    <div class="tags">
+      <span>Blender</span><span>Modélisation hard-surface</span><span>Booléens</span><span>PBR</span><span>glTF / GLB</span><span>Draco</span><span>FBX</span><span>Roblox Studio</span>
+    </div>
+  </main>
+</body>
+</html>

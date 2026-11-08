@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mel Nadaud — Portfolio</title>
+  <meta name="description" content="Portfolio de Mel Nadaud, étudiant en DSII à l'ESGI Toulon, à la recherche d'une alternance en développement, systèmes/réseaux ou cybersécurité.">
+  <meta property="og:title" content="Mel Nadaud — Portfolio">
+  <meta property="og:description" content="Étudiant en DSII à l'ESGI Toulon, à la recherche d'une alternance. Projets : STRATE-07 (PHP/MySQL), another-lie, jeu Roblox, modèle 3D, réseau NovaTech.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sp3tsn4zz.github.io/Portfolio/">
+  <meta property="og:image" content="https://sp3tsn4zz.github.io/Portfolio/img/strate07-accueil.webp">
   <link rel="stylesheet" href="css/style.css">
   <style>
     html { scroll-behavior: smooth; }
@@ -11,7 +17,7 @@
     .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
 
     /* Le style global met les <p> en noir : on le corrige pour cette page */
-    .wrap p { color: #d0d0d0; text-align: left; padding: .35rem 0; text-shadow: none; }
+    .wrap p { color: #d0d0d0; text-align: center; padding: .35rem 0; text-shadow: none; }
 
     nav { position: sticky; top: 0; z-index: 10; background: rgba(10,10,10,.92); border-bottom: 1px solid #3a0000; }
     nav .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: center; padding: 10px 20px; }
@@ -27,7 +33,7 @@
     .btn { display: inline-block; border: 1px solid #b30000; color: #fff; padding: 6px 22px; border-radius: 2px; }
     .btn:hover { background: #b30000; color: #fff; }
 
-    section { padding: 2.2rem 0 .5rem; }
+    section { padding: 2.2rem 2.5rem 1.5rem; }
     h2 { color: #b30000; text-shadow: 0 0 6px #b30000; border-bottom: 1px solid #3a0000; padding-bottom: .3rem; margin-bottom: 1rem; }
     h3 { color: #fff; font-weight: normal; font-size: 1.5rem; }
     strong { color: #fff; }
@@ -36,12 +42,12 @@
     .skill { border: 1px solid #3a0000; background: #110000; padding: 14px 16px; }
     .skill h3 { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
     .level { color: #b30000; font-size: 1.1rem; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
-    .skill p { font-size: 1.2rem; color: #b8b8b8 !important; }
+    .skill p { font-size: 1.2rem; color: #b8b8b8 !important; text-align: left; }
 
     .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; }
     .card { border: 1px solid #3a0000; background: #110000; padding: 16px 18px; display: flex; flex-direction: column; }
     .card .tag { color: #720081; font-size: 1.1rem; text-transform: uppercase; letter-spacing: .05em; }
-    .card p { font-size: 1.25rem; }
+    .card p { font-size: 1.25rem; text-align: left; }
     .card .more { margin-top: auto; padding-top: .6rem; }
     .card.featured { grid-column: 1 / -1; }
     .card.featured img { width: 100%; height: auto; margin: .8rem 0 .2rem; background: #fff; border: 1px solid #3a0000; }
@@ -55,11 +61,11 @@
     .timeline p { padding: .25rem 0; }
     .timeline .when { color: #b30000; }
     ul.plain { list-style: none; padding: 0; }
-    ul.plain li { padding: .25rem 0 .25rem 1.4rem; position: relative; }
-    ul.plain li::before { content: "⛧"; color: #b30000; position: absolute; left: 0; }
+    ul.plain li { padding: .25rem 0; text-align: center; }
+    ul.plain li::before { content: "⛧"; color: #b30000; margin-right: .5rem; }
 
     footer { text-align: center; padding: 3rem 0; color: #6a6a6a; border-top: 1px solid #3a0000; margin-top: 3rem; }
-    @media (max-width: 600px) { header.hero h1 { font-size: 2.2rem; } .titre { font-size: 1.3rem; } }
+    @media (max-width: 600px) { header.hero h1 { font-size: 2.2rem; } .titre { font-size: 1.3rem; } section { padding: 1.6rem 1rem 1rem; } }
   </style>
 </head>
 <body>
@@ -236,8 +242,9 @@
       <h2>Contact</h2>
       <p>Je recherche une alternance en rythme 3 jours en entreprise / 2 jours en école (mercredi-jeudi-vendredi en entreprise, lundi-mardi à l'école).</p>
       <p>E-mail : <a href="mailto:nadaud.m@outlook.com">nadaud.m@outlook.com</a> · Toulon (Var)</p>
-      <div class="btns" style="justify-content:flex-start">
+      <div class="btns">
         <a class="btn" href="mailto:nadaud.m@outlook.com?subject=Alternance%20-%20Mel%20Nadaud">Me contacter</a>
+        <a class="btn" href="https://github.com/Sp3tsn4zz" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </section>
 

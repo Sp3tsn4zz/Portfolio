@@ -5,18 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NovaTech — Architecture réseau — Mel Nadaud</title>
   <meta name="description" content="NovaTech : architecture réseau d'une entreprise fictive sur deux sites (Paris et Lyon) — VLAN, adressage, VPN IPsec, ACL. Projet ESGI.">
+  <meta name="theme-color" content="#0f1012">
+  <link rel="preload" href="fonts/big-shoulders-display-800.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/projet.css">
 </head>
-<body>
+<body class="p-novatech">
 
-  <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
+  <aside class="jauge" data-profondeur="400" aria-label="Navigation">
+    <a class="nom" href="index.html">Mel Nadaud<span>Portfolio</span></a>
+    <p class="compteur" aria-hidden="true"><span>−0000</span><small>m</small></p>
+    <p class="lieu" data-surface="NovaTech — Architecture réseau" aria-hidden="true">NovaTech — Architecture réseau</p>
+    <nav>
+      <span class="curseur" aria-hidden="true"></span>
+      <a href="#description">Description</a>
+      <a href="#ce-que-j-ai-fait">Ce que j'ai fait</a>
+      <a href="#un-probleme-rencontre">Un problème rencontré</a>
+      <a href="#outils">Outils</a>
+    </nav>
+    <a class="externe" href="index.html#projets">Retour aux projets</a>
+  </aside>
 
-  <main class="project-detail">
+  <main class="project-detail contenu">
     <h1>NovaTech — Architecture réseau</h1>
     <p class="project-meta">Réseau &amp; infrastructure — Projet académique ESGI — 2026</p>
 
-    <img src="img/novatech-schema.png" alt="Schéma de la topologie physique NovaTech : siège de Paris sur deux étages et agence de Lyon" class="hero-img" onerror="this.nextElementSibling.remove();this.remove()">
+    <div class="cadre hero"><img src="img/novatech-schema.png" alt="Schéma de la topologie physique NovaTech : siège de Paris sur deux étages et agence de Lyon"  onerror="var c=this.parentNode;c.nextElementSibling.remove();c.remove()"></div>
     <p class="caption">Topologie physique : siège de Paris (2 étages) et agence de Lyon, reliés par un VPN IPsec.</p>
 
     <div class="facts">
@@ -27,11 +41,11 @@
     </div>
 
     <section class="project-description">
-      <h2>Description</h2>
+      <h2 id="description">Description</h2>
       <p>À partir d'un appel d'offre fictif, j'ai conçu l'architecture réseau de NovaTech : un siège à Paris réparti sur deux étages et une agence à Lyon. Le travail va de l'analyse du besoin jusqu'au choix des équipements et des câbles, avec le nombre de ports justifié pour chaque switch.</p>
       <p>Les capacités ont été calculées avec une marge de croissance de 30 % : 80 utilisateurs deviennent 104 (78 à Paris, 26 à Lyon).</p>
 
-      <h2>Ce que j'ai fait</h2>
+      <h2 id="ce-que-j-ai-fait">Ce que j'ai fait</h2>
       <ul>
         <li><strong>Besoin et hypothèses :</strong> analyse du cahier des charges, contraintes, hypothèses de dimensionnement.</li>
         <li><strong>Topologie physique :</strong> deux cœurs de réseau de niveau 3 redondants à Paris, switches d'accès 48 ports Gigabit + 2 ports SFP+, câbles DAC 10G dans la baie.</li>
@@ -42,14 +56,18 @@
         <li><strong>Documentation :</strong> schéma physique légendé et dossier relu pour supprimer les incohérences (ports, VLAN, effectifs).</li>
       </ul>
 
-      <h2>Un problème rencontré</h2>
+      <h2 id="un-probleme-rencontre">Un problème rencontré</h2>
       <p>Le câble Cat 6 est limité à 100 m, et l'étage 2 dépasse cette distance depuis la baie principale. J'ai gardé 90 m comme limite de conception et choisi une liaison fibre OM4, avec un port SFP+ plutôt qu'un port Gigabit sur le switch concerné.</p>
 
-      <h2>Outils</h2>
+      <h2 id="outils">Outils</h2>
       <div class="tags">
         <span>Architecture réseau</span><span>VLAN</span><span>VPN IPsec</span><span>ACL</span><span>DHCP relay</span><span>IPv6</span><span>Schéma réseau</span>
       </div>
     </section>
   </main>
+
+  <footer class="pied">© 2026 Mel Nadaud. <a href="index.html">Retour au portfolio</a></footer>
+
+  <script src="js/profondeur.js" defer></script>
 </body>
 </html>

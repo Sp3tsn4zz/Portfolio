@@ -5,24 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>another-lie — Site de l'univers vvh0sn3xt — Mel Nadaud</title>
   <meta name="description" content="another-lie : site artistique de l'univers vvh0sn3xt, en HTML, CSS et JavaScript, publié avec GitHub Pages.">
+  <meta name="theme-color" content="#0f1012">
+  <link rel="preload" href="fonts/big-shoulders-display-800.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/projet.css">
 </head>
-<body>
+<body class="p-anotherlie">
 
-  <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
+  <aside class="jauge" data-profondeur="400" aria-label="Navigation">
+    <a class="nom" href="index.html">Mel Nadaud<span>Portfolio</span></a>
+    <p class="compteur" aria-hidden="true"><span>−0000</span><small>m</small></p>
+    <p class="lieu" data-surface="another-lie" aria-hidden="true">another-lie</p>
+    <nav>
+      <span class="curseur" aria-hidden="true"></span>
+      <a href="#description">Description</a>
+      <a href="#ce-que-fait-le-site">Ce que fait le site</a>
+      <a href="#git-et-publication">Git et publication</a>
+      <a href="#ma-part-dans-le-projet">Ma part dans le projet</a>
+      <a href="#captures">Captures</a>
+      <a href="#outils">Outils</a>
+    </nav>
+    <a class="externe" href="index.html#projets">Retour aux projets</a>
+  </aside>
 
-  <main class="project-detail">
+  <main class="project-detail contenu">
     <h1>another-lie</h1>
     <p class="project-meta">Développement web — Projet personnel — 2026</p>
     <div class="badges"><span class="badge ligne">En ligne</span><span class="badge dev">Contenu en cours d'ajout</span></div>
 
     <div class="actions">
-      <a class="btn" href="https://sp3tsn4zz.github.io/another-lie/" target="_blank" rel="noopener">Voir le site ↗</a>
-      <a class="btn secondaire" href="https://github.com/Sp3tsn4zz/another-lie" target="_blank" rel="noopener">Code sur GitHub ↗</a>
+      <a class="btn" href="https://sp3tsn4zz.github.io/another-lie/" target="_blank" rel="noopener">Voir le site</a>
+      <a class="btn secondaire" href="https://github.com/Sp3tsn4zz/another-lie" target="_blank" rel="noopener">Code sur GitHub</a>
     </div>
 
-    <img src="img/anotherlie-demarrage.webp" alt="Écran de démarrage animé du site another-lie" class="hero-img" width="1366" height="800">
+    <div class="cadre hero"><img src="img/anotherlie-demarrage.webp" alt="Écran de démarrage animé du site another-lie"  width="1366" height="800"></div>
     <p class="caption">L'écran de démarrage : texte tapé lettre par lettre et barre de chargement.</p>
 
     <div class="encadre">
@@ -37,10 +53,10 @@
       <div><b>Hébergement</b>GitHub Pages</div>
     </div>
 
-    <h2>Description</h2>
+    <h2 id="description">Description</h2>
     <p>another-lie est le site de l'univers visuel et musical de mon projet vvh0sn3xt (sigilkore / dark trap). Il reprend l'esthétique du projet : terminal en panne, glitchs, rouge sang et polices gothiques. Le but était d'apprendre le HTML, le CSS et le JavaScript en construisant un site qui me ressemble, sans framework.</p>
 
-    <h2>Ce que fait le site</h2>
+    <h2 id="ce-que-fait-le-site">Ce que fait le site</h2>
     <ul>
       <li><strong>Écran de démarrage :</strong> lignes de « diagnostic » écrites lettre par lettre, avec une barre de progression qui avance au même rythme.</li>
       <li><strong>Écran d'accès :</strong> identifiant et code demandés avant d'entrer. L'accès est retenu pendant la session (<code>sessionStorage</code>), et les autres pages renvoient vers l'accueil si on n'est pas passé par cet écran.</li>
@@ -54,25 +70,29 @@
       <strong>État actuel :</strong> la structure et les effets sont en place. La galerie et la page 3D sont encore en cours de remplissage.
     </div>
 
-    <h2>Git et publication</h2>
+    <h2 id="git-et-publication">Git et publication</h2>
     <p>J'ai développé le site sur une branche de fonctionnalité (<code>feature/page-accueil</code>), avec des commits réguliers, puis fusionné cette branche dans <code>main</code>. La branche <code>main</code> est publiée automatiquement par GitHub Pages : chaque <code>git push</code> met le site à jour.</p>
 
-    <h2>Ma part dans le projet</h2>
+    <h2 id="ma-part-dans-le-projet">Ma part dans le projet</h2>
     <div class="encadre">
       <p><strong>Idée, univers visuel et direction artistique</strong>, choix des fonctionnalités, tests, gestion du dépôt Git et mise en ligne.</p>
       <p>Le code est écrit avec l'assistance d'une IA. Je le relis et je l'applique en cherchant à le comprendre, pour pouvoir le faire évoluer moi-même.</p>
     </div>
 
-    <h2>Captures</h2>
+    <h2 id="captures">Captures</h2>
     <div class="galerie">
-      <figure><a href="img/anotherlie-acces.webp" target="_blank"><img src="img/anotherlie-acces.webp" alt="Écran d'accès « Enter soul frequency »" loading="lazy"></a><figcaption>Écran d'accès</figcaption></figure>
-      <figure><a href="img/anotherlie-musique.webp" target="_blank"><img src="img/anotherlie-musique.webp" alt="Page musique du site another-lie" loading="lazy"></a><figcaption>Page musique</figcaption></figure>
+      <figure><a class="cadre" href="img/anotherlie-acces.webp" target="_blank" rel="noopener"><img src="img/anotherlie-acces.webp" alt="Écran d'accès « Enter soul frequency »" loading="lazy"></a><figcaption>Écran d'accès</figcaption></figure>
+      <figure><a class="cadre" href="img/anotherlie-musique.webp" target="_blank" rel="noopener"><img src="img/anotherlie-musique.webp" alt="Page musique du site another-lie" loading="lazy"></a><figcaption>Page musique</figcaption></figure>
     </div>
 
-    <h2>Outils</h2>
+    <h2 id="outils">Outils</h2>
     <div class="tags">
       <span>HTML</span><span>CSS</span><span>JavaScript</span><span>sessionStorage</span><span>Git</span><span>GitHub</span><span>GitHub Pages</span>
     </div>
   </main>
+
+  <footer class="pied">© 2026 Mel Nadaud. <a href="index.html">Retour au portfolio</a></footer>
+
+  <script src="js/profondeur.js" defer></script>
 </body>
 </html>

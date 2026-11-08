@@ -5,16 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MAUERSEGLER M-7 — Modélisation 3D — Mel Nadaud</title>
   <meta name="description" content="Pistolet fictif MAUERSEGLER M-7 modélisé dans Blender, visible en 3D interactive, et intégré dans un jeu Roblox.">
+  <meta name="theme-color" content="#0f1012">
+  <link rel="preload" href="fonts/big-shoulders-display-800.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/projet.css">
   <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.1.0/dist/model-viewer.min.js"></script>
 </head>
-<body>
+<body class="p-m7">
 
-  <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
+  <aside class="jauge" data-profondeur="400" aria-label="Navigation">
+    <a class="nom" href="index.html">Mel Nadaud<span>Portfolio</span></a>
+    <p class="compteur" aria-hidden="true"><span>−0000</span><small>m</small></p>
+    <p class="lieu" data-surface="MAUERSEGLER M-7" aria-hidden="true">MAUERSEGLER M-7</p>
+    <nav>
+      <span class="curseur" aria-hidden="true"></span>
+      <a href="#description">Description</a>
+      <a href="#techniques-utilisees">Techniques utilisées</a>
+      <a href="#du-logiciel-3d-au-web-et-au-jeu">Du logiciel 3D au web et au jeu</a>
+      <a href="#un-probleme-rencontre">Un problème rencontré</a>
+      <a href="#ma-part-dans-le-projet">Ma part dans le projet</a>
+      <a href="#outils">Outils</a>
+    </nav>
+    <a class="externe" href="index.html#projets">Retour aux projets</a>
+  </aside>
 
-  <main class="project-detail">
-    <h1>MAUERSEGLER M-7</h1>
+  <main class="project-detail contenu">
+    <h1>MAUERSEGLER <span class="insecable">M-7</span></h1>
     <p class="project-meta">Modélisation 3D — Projet personnel — 2026</p>
 
     <model-viewer
@@ -40,10 +56,10 @@
       <div><b>Version jeu</b>≈ 16 000 triangles, pour Roblox</div>
     </div>
 
-    <h2>Description</h2>
+    <h2 id="description">Description</h2>
     <p>Arme fictive créée pour mon jeu Roblox. Je voulais un modèle crédible dans le détail : glissière usinée, rainures de préhension, organes de visée, gravures, chargeur avec témoins de munitions, silencieux démontable en tronçons et module laser fixé sur le rail.</p>
 
-    <h2>Techniques utilisées</h2>
+    <h2 id="techniques-utilisees">Techniques utilisées</h2>
     <ul>
       <li><strong>Modélisation par booléens non destructifs :</strong> les rainures, évents, cannelures et gravures sont « creusés » par des objets de découpe cachés. On peut donc les déplacer ou les modifier à tout moment.</li>
       <li><strong>Chanfreins et normales pondérées</strong> (modificateurs Bevel et Weighted Normal) pour des arêtes qui accrochent la lumière comme sur une vraie pièce usinée.</li>
@@ -51,27 +67,31 @@
       <li><strong>Deux versions du modèle :</strong> une version détaillée pour le rendu, et une version allégée d'environ 16 000 triangles pour le moteur de jeu.</li>
     </ul>
 
-    <h2>Du logiciel 3D au web et au jeu</h2>
+    <h2 id="du-logiciel-3d-au-web-et-au-jeu">Du logiciel 3D au web et au jeu</h2>
     <ul>
       <li><strong>Vers Roblox :</strong> export FBX de la version allégée, puis import dans Roblox Studio.</li>
       <li><strong>Vers le web :</strong> export au format glTF (.glb), puis compression de la géométrie (Draco). Le fichier passe de 6,5 Mo à 0,5 Mo.</li>
     </ul>
 
-    <h2>Un problème rencontré</h2>
+    <h2 id="un-probleme-rencontre">Un problème rencontré</h2>
     <p>Le format glTF ne sait pas traduire les textures procédurales de Blender. À l'export, la rugosité des matériaux métalliques était remplacée par la valeur maximale, et l'arme paraissait mate et plate. Les valeurs de rugosité d'origine ont été remises dans le fichier exporté. Seul le relief très fin (bump) est perdu, ce qui ne se voit pas à cette échelle.</p>
 
-    <h2>Ma part dans le projet</h2>
+    <h2 id="ma-part-dans-le-projet">Ma part dans le projet</h2>
     <div class="encadre">
       <p><strong>Idée, design de l'arme et direction artistique</strong> (nom, accessoires, gravures, couleurs), validation du résultat et intégration dans mon jeu.</p>
       <p>La modélisation a été réalisée avec l'assistance d'une IA dans Blender. Je suis le processus étape par étape pour apprendre à le refaire moi-même.</p>
     </div>
 
-    <p><a href="jeu-roblox.html">→ Voir l'arme dans le jeu Roblox</a></p>
+    <p class="suite"><a href="jeu-roblox.html">Voir l'arme dans le jeu Roblox</a></p>
 
-    <h2>Outils</h2>
+    <h2 id="outils">Outils</h2>
     <div class="tags">
       <span>Blender</span><span>Modélisation hard-surface</span><span>Booléens</span><span>PBR</span><span>glTF / GLB</span><span>Draco</span><span>FBX</span><span>Roblox Studio</span>
     </div>
   </main>
+
+  <footer class="pied">© 2026 Mel Nadaud. <a href="index.html">Retour au portfolio</a></footer>
+
+  <script src="js/profondeur.js" defer></script>
 </body>
 </html>

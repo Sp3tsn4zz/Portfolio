@@ -10,256 +10,193 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sp3tsn4zz.github.io/Portfolio/">
   <meta property="og:image" content="https://sp3tsn4zz.github.io/Portfolio/img/strate07-accueil.webp">
+  <meta name="theme-color" content="#0f1012">
+  <link rel="preload" href="fonts/big-shoulders-display-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="img/fond-megastructure.webp" as="image" media="(min-width: 901px)">
+  <link rel="preload" href="img/fond-megastructure-900.webp" as="image" media="(max-width: 900px)">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    html { scroll-behavior: smooth; }
-    body { line-height: 1.35; }
-    .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
-
-    /* Le style global met les <p> en noir : on le corrige pour cette page */
-    .wrap p { color: #d0d0d0; text-align: center; padding: .35rem 0; text-shadow: none; }
-
-    nav { position: sticky; top: 0; z-index: 10; background: rgba(10,10,10,.92); border-bottom: 1px solid #3a0000; }
-    nav .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: center; padding: 10px 20px; }
-    nav a { color: #d0d0d0; }
-    nav a:hover { color: #b30000; }
-
-    header.hero { text-align: center; padding: 3.5rem 0 2rem; }
-    header.hero h1 { font-size: 3rem; padding: 0; }
-    .titre { color: #fff; font-size: 1.6rem; margin-top: .4rem; }
-    .accroche { color: #b8b8b8 !important; font-style: italic; text-align: center !important; max-width: 640px; margin: .8rem auto 0; }
-    .contact-line { text-align: center !important; color: #8a8a8a !important; }
-    .btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 1rem; }
-    .btn { display: inline-block; border: 1px solid #b30000; color: #fff; padding: 6px 22px; border-radius: 2px; }
-    .btn:hover { background: #b30000; color: #fff; }
-
-    section { padding: 2.2rem 2.5rem 1.5rem; }
-    h2 { color: #b30000; text-shadow: 0 0 6px #b30000; border-bottom: 1px solid #3a0000; padding-bottom: .3rem; margin-bottom: 1rem; }
-    h3 { color: #fff; font-weight: normal; font-size: 1.5rem; }
-    strong { color: #fff; }
-
-    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 14px; }
-    .skill { border: 1px solid #3a0000; background: #110000; padding: 14px 16px; }
-    .skill h3 { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
-    .level { color: #b30000; font-size: 1.1rem; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
-    .skill p { font-size: 1.2rem; color: #b8b8b8 !important; text-align: left; }
-
-    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; }
-    .card { border: 1px solid #3a0000; background: #110000; padding: 16px 18px; display: flex; flex-direction: column; }
-    .card .tag { color: #720081; font-size: 1.1rem; text-transform: uppercase; letter-spacing: .05em; }
-    .card p { font-size: 1.25rem; text-align: left; }
-    .card .more { margin-top: auto; padding-top: .6rem; }
-    .card.featured { grid-column: 1 / -1; }
-    .card.featured img { width: 100%; height: auto; margin: .8rem 0 .2rem; background: #fff; border: 1px solid #3a0000; }
-    .card .thumb { display: block; margin: -16px -18px .8rem; border-bottom: 1px solid #3a0000; overflow: hidden; aspect-ratio: 16 / 9; background: #0a0a0a; }
-    .card .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
-    .card:hover .thumb img { transform: scale(1.05); }
-    .card .statut { color: #f0d24a; }
-    .card .statut.ligne { color: #5fe0a8; }
-    .card .liens { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: auto; padding-top: .6rem; }
-
-    .timeline p { padding: .25rem 0; }
-    .timeline .when { color: #b30000; }
-    ul.plain { list-style: none; padding: 0; }
-    ul.plain li { padding: .25rem 0; text-align: center; }
-    ul.plain li::before { content: "⛧"; color: #b30000; margin-right: .5rem; }
-
-    footer { text-align: center; padding: 3rem 0; color: #6a6a6a; border-top: 1px solid #3a0000; margin-top: 3rem; }
-    @media (max-width: 600px) { header.hero h1 { font-size: 2.2rem; } .titre { font-size: 1.3rem; } section { padding: 1.6rem 1rem 1rem; } }
-  </style>
 </head>
 <body>
 
-  <nav>
-    <div class="wrap">
+  <aside class="jauge" data-profondeur="1200" aria-label="Navigation">
+    <a class="nom" href="#haut">Mel Nadaud<span>Portfolio</span></a>
+    <p class="compteur" aria-hidden="true"><span>−0000</span><small>m</small></p>
+    <p class="lieu" data-surface="Surface" aria-hidden="true">Surface</p>
+    <nav>
+      <span class="curseur" aria-hidden="true"></span>
       <a href="#apropos">À propos</a>
       <a href="#competences">Compétences</a>
       <a href="#projets">Projets</a>
       <a href="#parcours">Parcours</a>
       <a href="#contact">Contact</a>
-      <a href="https://sp3tsn4zz.github.io/another-lie/" target="_blank" rel="noopener">Univers vvh0sn3xt</a>
-    </div>
-  </nav>
+    </nav>
+    <a class="externe" href="https://sp3tsn4zz.github.io/another-lie/" target="_blank" rel="noopener">Univers vvh0sn3xt</a>
+  </aside>
 
-  <div class="wrap">
+  <main class="contenu" id="haut">
 
-    <header class="hero">
-      <h1>Mel Nadaud</h1>
-      <p class="titre">Étudiant en DSII à l'ESGI Toulon — à la recherche d'une alternance</p>
-      <p class="contact-line">Développement et Sécurité de l'Information et de l'Infrastructure · Toulon (Var)</p>
+    <header class="entree">
+      <p class="dispo"><strong>Recherche une alternance</strong>3 jours en entreprise, 2 jours à l'école · Toulon (Var)</p>
+      <h1>Mel <span class="nom-famille">Nadaud</span></h1>
+      <p class="chapeau">Étudiant en 1re année à l'ESGI Toulon, parcours DSII (Développement et Sécurité de l'Information et de l'Infrastructure).</p>
       <p class="accroche">« J'apprends en construisant : mes propres environnements, mes propres outils, mes propres projets. »</p>
-      <div class="btns">
+      <div class="actions">
         <a class="btn" href="#projets">Voir mes projets</a>
-        <a class="btn" href="mailto:nadaud.m@outlook.com">Me contacter</a>
+        <a class="btn secondaire" href="mailto:nadaud.m@outlook.com">M'écrire</a>
       </div>
     </header>
 
-    <section id="apropos">
+    <section id="apropos" class="piece intro-piece">
       <h2>À propos</h2>
       <p>Avant l'informatique : un Bac Pro Commerce, une année de BTS Management Commercial Opérationnel, puis plusieurs années de contact client, notamment comme manager en restauration rapide et vendeur en boulangerie. Ces expériences m'ont appris à garder mon calme sous pression et à respecter les procédures.</p>
       <p>Pourquoi l'informatique : je produis de la musique en autodidacte depuis mes 18 ans. Cela suppose de maîtriser des outils complexes et de résoudre seul des problèmes techniques. L'informatique est la suite logique de cette démarche.</p>
       <p>Je cherche une alternance, ouverte aux trois familles du cursus (développement, systèmes/réseaux, cybersécurité). Ma spécialisation se construira sur le terrain. J'annonce mon niveau réel plutôt que de l'enjoliver.</p>
     </section>
 
-    <section id="competences">
+    <section id="competences" class="piece">
       <h2>Compétences</h2>
-      <div class="skills">
-        <div class="skill">
-          <h3>Linux <span class="level">Bases</span></h3>
-          <p>Utilisateurs et groupes, permissions, sudo, suivi des processus (top), recherche dans les logs (grep, dmesg), archivage tar, scripts bash.</p>
-        </div>
-        <div class="skill">
-          <h3>Réseaux <span class="level">En apprentissage</span></h3>
-          <p>Conception d'une topologie sur deux sites, plan de VLAN et d'adressage, relais DHCP, VPN IPsec, ACL (projet NovaTech).</p>
-        </div>
-        <div class="skill">
-          <h3>Développement <span class="level">Débutant</span></h3>
-          <p>Python (bases), HTML/CSS/JavaScript (bases), C et VBA Excel (cours ESGI), notions de PHP (PDO) et de Laravel.</p>
-        </div>
-        <div class="skill">
-          <h3>Bases de données <span class="level">Débutant</span></h3>
-          <p>Modélisation MCD / Merise (cours ESGI, outil Looping), MySQL, phpMyAdmin, requêtes préparées.</p>
-        </div>
-        <div class="skill">
-          <h3>Mise en ligne <span class="level">Première expérience</span></h3>
-          <p>Hébergement mutualisé (alwaysdata), base MySQL de production avec utilisateur dédié, transfert FTP chiffré (TLS), HTTPS, GitHub Pages. GLPI installé en local sous WampServer (TP).</p>
-        </div>
-        <div class="skill">
-          <h3>Outils et logiciels <span class="level">Pratique</span></h3>
-          <p>VS Code, Git et GitHub, GitHub Pages, WampServer (Apache, PHP, MySQL), phpMyAdmin, FileZilla, VirtualBox, GLPI, Looping, Blender, Roblox Studio, Notion, Obsidian.</p>
-        </div>
-        <div class="skill">
-          <h3>3D et jeu <span class="level">Découverte</span></h3>
-          <p>Blender, Roblox Studio (projets MAUERSEGLER M-7 et jeu Roblox).</p>
-        </div>
-        <div class="skill">
-          <h3>Cybersécurité <span class="level">Découverte</span></h3>
-          <p>Mesures appliquées sur STRATE-07 : mots de passe hachés, requêtes préparées, contrôles côté serveur, cookies sécurisés. Autoformation en cours : Linux/Kali et bases du pentest.</p>
-        </div>
+      <div class="fiche">
+        <div class="ligne"><h3>Linux</h3><span class="niveau">Bases</span><p>Utilisateurs et groupes, permissions, sudo, suivi des processus (top), recherche dans les logs (grep, dmesg), archivage tar, scripts bash.</p></div>
+        <div class="ligne"><h3>Réseaux</h3><span class="niveau">En apprentissage</span><p>Conception d'une topologie sur deux sites, plan de VLAN et d'adressage, relais DHCP, VPN IPsec, ACL (projet NovaTech).</p></div>
+        <div class="ligne"><h3>Développement</h3><span class="niveau">Débutant</span><p>Python (bases), HTML/CSS/JavaScript (bases), C et VBA Excel (cours ESGI), notions de PHP (PDO) et de Laravel.</p></div>
+        <div class="ligne"><h3>Bases de données</h3><span class="niveau">Débutant</span><p>Modélisation MCD / Merise (cours ESGI, outil Looping), MySQL, phpMyAdmin, requêtes préparées.</p></div>
+        <div class="ligne"><h3>Mise en ligne</h3><span class="niveau">Première expérience</span><p>Hébergement mutualisé (alwaysdata), base MySQL de production avec utilisateur dédié, transfert FTP chiffré (TLS), HTTPS, GitHub Pages. GLPI installé en local sous WampServer (TP).</p></div>
+        <div class="ligne"><h3>Cybersécurité</h3><span class="niveau">Découverte</span><p>Mesures appliquées sur STRATE-07 : mots de passe hachés, requêtes préparées, contrôles côté serveur, cookies sécurisés. Autoformation en cours : Linux/Kali et bases du pentest.</p></div>
+        <div class="ligne"><h3>3D et jeu</h3><span class="niveau">Découverte</span><p>Blender, Roblox Studio (projets MAUERSEGLER M-7 et jeu Roblox).</p></div>
+        <div class="ligne"><h3>Outils et logiciels</h3><span class="niveau">Pratique</span><p>VS Code, Git et GitHub, GitHub Pages, WampServer (Apache, PHP, MySQL), phpMyAdmin, FileZilla, VirtualBox, GLPI, Looping, Blender, Roblox Studio, Notion, Obsidian.</p></div>
       </div>
     </section>
 
-    <section id="projets">
+    <section id="projets" class="piece">
       <h2>Projets</h2>
-      <div class="projects">
+      <div class="baies">
 
-        <article class="card">
-          <a class="thumb" href="strate07.html"><img src="img/strate07-accueil.webp" alt="Aperçu du site STRATE-07" loading="lazy"></a>
-          <span class="tag">Web · PHP / MySQL · ESGI · <span class="statut ligne">En ligne</span></span>
-          <h3>STRATE-07</h3>
-          <p>Boutique fictive complète : comptes clients, catalogue de 53 produits, commandes et espace administrateur. Base MySQL, mise en ligne chez un hébergeur.</p>
-          <div class="liens">
-            <a href="strate07.html">Voir le projet →</a>
-            <a href="https://strate07.alwaysdata.net" target="_blank" rel="noopener">Site en ligne ↗</a>
+        <article class="baie">
+          <a class="cadre" href="strate07.html"><img src="img/strate07-accueil.webp" alt="Aperçu du site STRATE-07" width="1366" height="800" loading="lazy"></a>
+          <div>
+            <p class="domaine"><span>Web, PHP / MySQL, ESGI</span><span class="statut ligne">En ligne</span></p>
+            <h3>STRATE-07</h3>
+            <p>Boutique fictive complète : comptes clients, catalogue de 53 produits, commandes et espace administrateur. Base MySQL, mise en ligne chez un hébergeur.</p>
+            <p class="liens"><a href="strate07.html">Voir le projet</a><a href="https://strate07.alwaysdata.net" target="_blank" rel="noopener">Site en ligne</a></p>
           </div>
         </article>
 
-        <article class="card">
-          <a class="thumb" href="another-lie.html"><img src="img/anotherlie-demarrage.webp" alt="Aperçu du site another-lie" loading="lazy"></a>
-          <span class="tag">Web · HTML / CSS / JS · <span class="statut ligne">En ligne</span></span>
-          <h3>another-lie</h3>
-          <p>Site artistique de mon projet musical vvh0sn3xt : écran de démarrage animé, effets glitch, galerie filtrable. Publié avec GitHub Pages.</p>
-          <div class="liens">
-            <a href="another-lie.html">Voir le projet →</a>
-            <a href="https://sp3tsn4zz.github.io/another-lie/" target="_blank" rel="noopener">Site en ligne ↗</a>
+        <article class="baie">
+          <a class="cadre" href="another-lie.html"><img src="img/anotherlie-demarrage.webp" alt="Aperçu du site another-lie" loading="lazy"></a>
+          <div>
+            <p class="domaine"><span>Web, HTML / CSS / JS</span><span class="statut ligne">En ligne</span></p>
+            <h3>another-lie</h3>
+            <p>Site artistique de mon projet musical vvh0sn3xt : écran de démarrage animé, effets glitch, galerie filtrable. Publié avec GitHub Pages.</p>
+            <p class="liens"><a href="another-lie.html">Voir le projet</a><a href="https://sp3tsn4zz.github.io/another-lie/" target="_blank" rel="noopener">Site en ligne</a></p>
           </div>
         </article>
 
-        <article class="card">
-          <a class="thumb" href="jeu-roblox.html"><img src="img/roblox-megastructure.webp" alt="Aperçu du jeu Roblox" loading="lazy"></a>
-          <span class="tag">Jeu · Roblox / Luau · <span class="statut">En développement</span></span>
-          <h3>Jeu de parcours Roblox</h3>
-          <p>Parcours en vue à la première personne dans une mégastructure. Système de déplacement complet (grappin, course sur les murs, téléportation…) en phase de réglage.</p>
-          <a class="more" href="jeu-roblox.html">Voir le projet →</a>
+        <article class="baie">
+          <a class="cadre" href="jeu-roblox.html"><img src="img/roblox-megastructure.webp" alt="Aperçu du jeu Roblox" loading="lazy"></a>
+          <div>
+            <p class="domaine"><span>Jeu, Roblox / Luau</span><span class="statut cours">En développement</span></p>
+            <h3>Jeu de parcours Roblox</h3>
+            <p>Parcours en vue à la première personne dans une mégastructure. Système de déplacement complet (grappin, course sur les murs, téléportation…) en phase de réglage.</p>
+            <p class="liens"><a href="jeu-roblox.html">Voir le projet</a></p>
+          </div>
         </article>
 
-        <article class="card">
-          <a class="thumb" href="mauersegler-m7.html"><img src="img/mauersegler-m7-apercu.webp" alt="Aperçu du modèle 3D MAUERSEGLER M-7" loading="lazy"></a>
-          <span class="tag">3D · Blender</span>
-          <h3>MAUERSEGLER M-7</h3>
-          <p>Pistolet fictif modélisé dans Blender, visible en 3D interactive sur la page, et intégré dans mon jeu Roblox.</p>
-          <a class="more" href="mauersegler-m7.html">Voir en 3D →</a>
+        <article class="baie">
+          <a class="cadre" href="mauersegler-m7.html"><img src="img/mauersegler-m7-apercu.webp" alt="Aperçu du modèle 3D MAUERSEGLER M-7" loading="lazy"></a>
+          <div>
+            <p class="domaine"><span>3D, Blender</span></p>
+            <h3>MAUERSEGLER M-7</h3>
+            <p>Pistolet fictif modélisé dans Blender, visible en 3D interactive sur la page, et intégré dans mon jeu Roblox.</p>
+            <p class="liens"><a href="mauersegler-m7.html">Voir en 3D</a></p>
+          </div>
         </article>
 
-        <article class="card">
-          <span class="tag">Réseau · ESGI · 2026</span>
-          <h3>NovaTech — architecture réseau</h3>
+      </div>
+
+      <h3 class="registre-titre">Autres projets</h3>
+      <div class="registre">
+        <article class="entree-reg">
+          <h3>NovaTech<span class="domaine">Réseau, ESGI, 2026</span></h3>
           <p>Projet fil rouge d'Architecture des réseaux : conception du réseau d'une entreprise fictive sur deux sites (Paris et Lyon). Topologie physique, équipements, plan de VLAN et d'adressage, VPN IPsec et règles de sécurité.</p>
-          <a class="more" href="projet1.html">Voir le projet en détail →</a>
+          <a href="projet1.html">Voir le détail</a>
         </article>
-
-        <article class="card">
-          <span class="tag">Systèmes · ESGI · <span class="statut">TP en cours</span></span>
-          <h3>GLPI — gestion de parc</h3>
+        <article class="entree-reg">
+          <h3>GLPI, gestion de parc<span class="domaine">Systèmes, ESGI</span></h3>
           <p>Installation sécurisée de GLPI en local sous WampServer : VirtualHost Apache, base et utilisateur MySQL aux droits limités. En cours : alimentation du parc (import CSV, agents GLPI sur machines virtuelles).</p>
+          <span class="statut cours">TP en cours</span>
         </article>
-
-        <article class="card">
-          <span class="tag">Web · Laravel · Équipe · ESGI</span>
-          <h3>Site du BDE de l'ESGI</h3>
+        <article class="entree-reg">
+          <h3>Site du BDE de l'ESGI<span class="domaine">Web, Laravel, équipe</span></h3>
           <p>Projet de groupe en Laravel (PHP) avec des rôles répartis : j'ai mis en place le squelette du site sur ma machine virtuelle. Dépôt GitHub partagé, branches, commits et merge.</p>
+          <span class="statut">Projet de groupe</span>
         </article>
-
-        <article class="card">
-          <span class="tag">Python · En cours</span>
-          <h3>Jarvis</h3>
+        <article class="entree-reg">
+          <h3>Jarvis<span class="domaine">Python</span></h3>
           <p>Outil d'automatisation personnel, installé sous VirtualBox. Je l'étends en Python avec des objectifs concrets, comme coder un décorateur.</p>
+          <span class="statut cours">En cours</span>
         </article>
-
-        <article class="card">
-          <span class="tag">Linux · Auto-formation</span>
-          <h3>Laboratoire Linux / VirtualBox</h3>
+        <article class="entree-reg">
+          <h3>Laboratoire Linux<span class="domaine">Linux, autoformation</span></h3>
           <p>Machines virtuelles sous VirtualBox pour pratiquer Linux, avec mes notes de cours structurées dans Obsidian.</p>
+          <span class="statut">Continu</span>
         </article>
-
-        <article class="card">
-          <span class="tag">Web · Projet réel · <span class="statut">À venir</span></span>
-          <h3>Refonte du site d'Aluminium Durand</h3>
+        <article class="entree-reg">
+          <h3>Aluminium Durand<span class="domaine">Web, projet réel</span></h3>
           <p>Projet à venir : refondre le site de l'entreprise d'un ami, à Hyères, en conservant son bon référencement Google.</p>
+          <span class="statut cours">À venir</span>
         </article>
-
-        <article class="card">
-          <span class="tag">Créatif · Depuis l'âge de 18 ans</span>
-          <h3>Production musicale — vvh0sn3xt</h3>
+        <article class="entree-reg">
+          <h3>vvh0sn3xt<span class="domaine">Production musicale, depuis l'âge de 18 ans</span></h3>
           <p>Composition, communication et diffusion de bout en bout, en autonomie totale. Un projet mené dans la durée, qui demande de la rigueur et de la persévérance.</p>
-          <a class="more" href="another-lie.html">Découvrir l'univers →</a>
+          <a href="another-lie.html">Découvrir l'univers</a>
         </article>
-
       </div>
     </section>
 
-    <section id="parcours" class="timeline">
+    <section id="parcours" class="piece">
       <h2>Parcours</h2>
-      <h3>Formation</h3>
-      <ul class="plain">
-        <li><strong>ESGI Toulon</strong> — DSII (Développement et Sécurité de l'Information et de l'Infrastructure), titre RNCP niveau 6 (équivalent Bac+3)</li>
-        <li><strong>BTS Management Commercial Opérationnel</strong> — une année</li>
-        <li><strong>Bac Pro Commerce</strong></li>
-      </ul>
-      <h3 style="margin-top:1rem">Expériences</h3>
-      <ul class="plain">
-        <li><strong>Manager en restauration rapide</strong> — encadrement d'équipe, gestion des plannings et de la pression</li>
-        <li><strong>Vendeur en boulangerie</strong> — équipe réduite, services à fort flux</li>
-        <li><strong>Vente sur les marchés</strong> — autonomie et relation client</li>
-      </ul>
-      <h3 style="margin-top:1rem">Auto-formation</h3>
-      <ul class="plain">
-        <li>Linux · Python · Kali Linux et bases du pentest</li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Je recherche une alternance en rythme 3 jours en entreprise / 2 jours en école (mercredi-jeudi-vendredi en entreprise, lundi-mardi à l'école).</p>
-      <p>E-mail : <a href="mailto:nadaud.m@outlook.com">nadaud.m@outlook.com</a> · Toulon (Var)</p>
-      <div class="btns">
-        <a class="btn" href="mailto:nadaud.m@outlook.com?subject=Alternance%20-%20Mel%20Nadaud">Me contacter</a>
-        <a class="btn" href="https://github.com/Sp3tsn4zz" target="_blank" rel="noopener">GitHub ↗</a>
+      <div class="colonnes-parcours">
+        <div>
+          <h3>Formation</h3>
+          <ul>
+            <li><strong>ESGI Toulon</strong>DSII (Développement et Sécurité de l'Information et de l'Infrastructure), titre RNCP niveau 6 (équivalent Bac+3)</li>
+            <li><strong>BTS Management Commercial Opérationnel</strong>Une année</li>
+            <li><strong>Bac Pro Commerce</strong></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Expériences</h3>
+          <ul>
+            <li><strong>Manager en restauration rapide</strong>Encadrement d'équipe, gestion des plannings et de la pression</li>
+            <li><strong>Vendeur en boulangerie</strong>Équipe réduite, services à fort flux</li>
+            <li><strong>Vente sur les marchés</strong>Autonomie et relation client</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Autoformation</h3>
+          <ul>
+            <li><strong>Linux</strong>Pratique sur machines virtuelles</li>
+            <li><strong>Python</strong>Bases, en autonomie</li>
+            <li><strong>Kali Linux</strong>Bases du pentest</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <footer>© 2026 Mel Nadaud</footer>
-  </div>
+    <section id="contact" class="piece fond">
+      <h2>Contact</h2>
+      <p>Je recherche une alternance en rythme 3 jours en entreprise et 2 jours à l'école : mercredi, jeudi et vendredi en entreprise, lundi et mardi à l'école. Basé à Toulon (Var).</p>
+      <p class="adresse"><a href="mailto:nadaud.m@outlook.com?subject=Alternance%20-%20Mel%20Nadaud">nadaud.m@outlook.com</a></p>
+      <div class="actions">
+        <a class="btn" href="mailto:nadaud.m@outlook.com?subject=Alternance%20-%20Mel%20Nadaud">M'écrire</a>
+        <a class="btn secondaire" href="https://github.com/Sp3tsn4zz" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
 
+  </main>
+
+  <footer class="pied">© 2026 Mel Nadaud. Site en HTML, CSS et JavaScript, sans framework, publié avec GitHub Pages.</footer>
+
+  <script src="js/profondeur.js" defer></script>
 </body>
 </html>
